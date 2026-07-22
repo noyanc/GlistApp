@@ -8,12 +8,21 @@
 #ifndef GCANVAS_H_
 #define GCANVAS_H_
 
+#if defined(ANDROID) || defined(__ANDROID__)
+#include "gAndroidCanvas.h"
+#include "gAndroidUtil.h"
+typedef gAndroidCanvas gAppCanvasBase;
+#else
+enum DeviceOrientation { };
 #include "gBaseCanvas.h"
+typedef gBaseCanvas gAppCanvasBase;
+#endif
+
 #include "gApp.h"
 #include "gImage.h"
 
 
-class gCanvas : public gBaseCanvas {
+class gCanvas : public gAppCanvasBase {
 public:
 	gCanvas(gApp* root);
 	virtual ~gCanvas();
@@ -33,6 +42,16 @@ public:
 	void mouseEntered();
 	void mouseExited();
 	void windowResized(int w, int h);
+
+
+	void deviceOrientationChanged(DeviceOrientation deviceorientation);
+
+	void touchMoved(int x, int y, int fingerId);
+	void touchPressed(int x, int y, int fingerId);
+	void touchReleased(int x, int y, int fingerId);
+
+	void pause();
+	void resume();
 
 	void showNotify();
 	void hideNotify();

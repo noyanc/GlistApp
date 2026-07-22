@@ -9,7 +9,8 @@
 #include "gCanvas.h"
 
 
-gCanvas::gCanvas(gApp* root) : gBaseCanvas(root) {
+
+gCanvas::gCanvas(gApp* root) : gAppCanvasBase(root) {
 	this->root = root;
 }
 
@@ -68,6 +69,29 @@ void gCanvas::mouseExited() {
 }
 
 void gCanvas::windowResized(int w, int h) {
+
+}
+
+void gCanvas::deviceOrientationChanged(DeviceOrientation deviceorientation) {
+
+}
+
+void gCanvas::touchMoved(int x, int y, int fingerId) {
+
+}
+
+void gCanvas::touchPressed(int x, int y, int fingerId) {
+	gLogi("gCanvas") << "touched";
+}
+
+void gCanvas::touchReleased(int x, int y, int fingerId) {
+
+}
+void gCanvas::pause() {
+
+}
+
+void gCanvas::resume() {
 
 }
 
