@@ -91,16 +91,7 @@ if(IOS)
 	enable_language(OBJCXX)
 endif()
 
-if (ANDROID)
-	if (EXISTS "${APP_DIR}/../../GlistEngine")
-		set(TOP_DIR ${APP_DIR}/../..)
-	else ()
-		set(TOP_DIR ${APP_DIR}/../../../../..)
-	endif ()
-else ()
-	set(TOP_DIR ${APP_DIR}/../..)
-endif ()
-
+set(TOP_DIR ${APP_DIR}/../..)
 set(MAIN_DIR ${TOP_DIR}/GlistEngine)
 set(ENGINE_DIR ${MAIN_DIR}/engine)
 
