@@ -17,14 +17,8 @@ set(PLUGINS)
 ########## PATHS AND VARIABLES ##########
 project (${APP_NAME})
 
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../GlistEngine")
-    set(TOP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../..")
-elseif(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../GlistEngine")
-    set(TOP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../../..")
-else()
-    set(TOP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../..")
-endif()
 
+set(TOP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../../..")
 set(MAIN_DIR ${TOP_DIR}/GlistEngine)
 set(ENGINE_DIR ${MAIN_DIR}/engine)
 
